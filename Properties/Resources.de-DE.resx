@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddDocument" xml:space="preserve">
+    <value>Dokumnent hinzufügen</value>
+  </data>
+  <data name="AutoHidePanelToolTip" xml:space="preserve">
+    <value>Ausblenden</value>
+  </data>
+  <data name="CalendarNoneText" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="CalendarTodayText" xml:space="preserve">
+    <value>Heute</value>
+  </data>
+  <data name="Changing" xml:space="preserve">
+    <value>Ändern</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Löschen bestätigen</value>
+  </data>
+  <data name="ConfirmOverWriteFile" xml:space="preserve">
+    <value>Überschreiben von Datei bestätigen</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="DeleteFile" xml:space="preserve">
+    <value>Wollen Sie das Dokument "#1" wirklich löschen?</value>
+  </data>
+  <data name="DeleteFolder" xml:space="preserve">
+    <value>Soll der Ordner '#1' mit seinem gesamten Inhalt wirklich gelöscht werden?</value>
+  </data>
+  <data name="DeleteGroup" xml:space="preserve">
+    <value>Wollen Sie die Gruppe '#1' wirklich löschen?</value>
+  </data>
+  <data name="DeleteGroupUser" xml:space="preserve">
+    <value>Wollen Sie die Gruppe oder den Nutzer '#1' wirklich löschen?</value>
+  </data>
+  <data name="DeleteLookUpList" xml:space="preserve">
+    <value>Wollen Sie wirklich die Nachschlageliste löschen?</value>
+  </data>
+  <data name="DeleteTable" xml:space="preserve">
+    <value>Wollen Sie die Tabelle wirklich löschen?</value>
+  </data>
+  <data name="DeleteTableWithRecords" xml:space="preserve">
+    <value>In der Tabelle befinden sich Datensätze!
+
+Wollen Sie die Tabelle trotzdem löschen?</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>Wollen Sie den Benutzer '#1' wirklich löschen?</value>
+  </data>
+  <data name="DeletMask" xml:space="preserve">
+    <value>Wollen Sie die Filtermaske wirklich löschen?</value>
+  </data>
+  <data name="DeletMasks" xml:space="preserve">
+    <value>Wollen Sie die Filtermaske mit allen Unterelementen wirklich löschen?</value>
+  </data>
+  <data name="DeviceRights" xml:space="preserve">
+    <value>Sie besitzen keine Rechte für die '#1'
+
+
+Wenden Sie sich an den Administrator um Ihre Rechte ggf. zu ändern.</value>
+  </data>
+  <data name="DocumentFileIsOpen" xml:space="preserve">
+    <value>Datei ist bereits von Nutzer '#1' auf Computer '#2' geöffnet!</value>
+  </data>
+  <data name="DocumentFolderIsInvalid" xml:space="preserve">
+    <value>Verzeichnis '#1' kann nicht gefunden werden!</value>
+  </data>
+  <data name="DropDownCancelButton" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bearbeiten</value>
+  </data>
+  <data name="EditMask" xml:space="preserve">
+    <value>Tragen Sie den Name der Suchmaske ein!</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Ausführen/Sichtbar</value>
+  </data>
+  <data name="EmptyFields" xml:space="preserve">
+    <value>Einige Felder haben keine Werte!
+
+Solle die Eingabe verworfen werden?</value>
+  </data>
+  <data name="EndetMitZeichenfolge" xml:space="preserve">
+    <value>Endet mit Zeichenfolge</value>
+  </data>
+  <data name="ErrorString" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Ausführen/Sichtbar</value>
+  </data>
+  <data name="FieldExists" xml:space="preserve">
+    <value>Feld ist bereits vorhanden!</value>
+  </data>
+  <data name="FileFilter" xml:space="preserve">
+    <value>Dokumente (*.txt;*.doc;*.xls;*.PDF)|*.txt;*.doc;*.xls;*.PDF|Vorlagen (*.dot;*.xlt)|*.dot;*.xlt|Bilddateien (*.BMP;*.JPG;*.JPEG;*.JPE;*.JFIF;*.PNG;*.TIF;*.TIFF;*.GIF)|*.BMP;*.JPG;*.JPEG;*.JPE;*.JFIF;*.PNG;*.TIF;*.TIFF;*.GIF|Alle Dateien|*.*</value>
+  </data>
+  <data name="FileIsCheckIn" xml:space="preserve">
+    <value>Datei wurde erfolgreich eingecheckt!</value>
+  </data>
+  <data name="FileWasSuccCheckOut" xml:space="preserve">
+    <value>Die Datei '#1' wurder erfolgreich nach '#2' kopiert bzw. ausgecheckt!</value>
+  </data>
+  <data name="Filter1" xml:space="preserve">
+    <value>Microsoft Word (*.doc)|*.doc|Microsoft Excel (*.xls)|*.xls|Acrobat (*.pdf)|*.pdf|Alle Dateien (*.*)|*.*</value>
+  </data>
+  <data name="FilterRowConditionBeginsWith" xml:space="preserve">
+    <value>Beginnt mit Zeichenfolge</value>
+  </data>
+  <data name="FilterRowConditionClear" xml:space="preserve">
+    <value>Filter löschen</value>
+  </data>
+  <data name="FilterRowConditionContains" xml:space="preserve">
+    <value>In Zeichenfolge enthalten</value>
+  </data>
+  <data name="FilterRowConditionEqual" xml:space="preserve">
+    <value>Gleich</value>
+  </data>
+  <data name="FilterRowConditionGreaterThan" xml:space="preserve">
+    <value>Größer als</value>
+  </data>
+  <data name="FilterRowConditionGreaterThanOrEqual" xml:space="preserve">
+    <value>Größer oder gleich</value>
+  </data>
+  <data name="FilterRowConditionIsEmpty" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="FilterRowConditionLessThan" xml:space="preserve">
+    <value>Kleiner als</value>
+  </data>
+  <data name="FilterRowConditionLessThanOrEqual" xml:space="preserve">
+    <value>Kleiner oder gleich</value>
+  </data>
+  <data name="FilterRowConditionNotContains" xml:space="preserve">
+    <value>Nicht in Zeichenfolge enthalten</value>
+  </data>
+  <data name="FilterRowConditionNotEqual" xml:space="preserve">
+    <value>Nicht gleich</value>
+  </data>
+  <data name="FilterRowConditionNotIsEmpty" xml:space="preserve">
+    <value>Nicht leer</value>
+  </data>
+  <data name="FilterRowInfoText" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FolderNameExists" xml:space="preserve">
+    <value>Dieser Ordername ist unter dem gleichen Namen bereits vorhanden!</value>
+  </data>
+  <data name="FullAccess" xml:space="preserve">
+    <value>Vollzugriff</value>
+  </data>
+  <data name="GroupByBoxInfoText" xml:space="preserve">
+    <value>Ziehen Sie einen Spaltenkopf in diesen Bereich, um eine Spalte zu gruppieren</value>
+  </data>
+  <data name="GroupExists" xml:space="preserve">
+    <value>Gruppe ist bereits vorhanden!</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InputLookUpName" xml:space="preserve">
+    <value>Geben Sie einen Namen von maximal 50 Zeichen ein!</value>
+  </data>
+  <data name="Insert" xml:space="preserve">
+    <value>Einfügen</value>
+  </data>
+  <data name="InvalidChar" xml:space="preserve">
+    <value>ist ein ungültiges Zeichen!</value>
+  </data>
+  <data name="InvalidCharByNumber" xml:space="preserve">
+    <value>Am Anfang von Datenbankfeldern dürfen keine nummerischen Werte vorkommen!</value>
+  </data>
+  <data name="InvalidDocumentOwnerToDelete" xml:space="preserve">
+    <value>INFO: Sie sind nicht der Besitzer von diesem Dokumente das Sie gerade löschen wollen!</value>
+  </data>
+  <data name="InvalidFieldName" xml:space="preserve">
+    <value>Der eingegebene Feldname ist ein reserviertes Schlüsselwort. Bitte verwenden Sie eine andere Bezeichnung!</value>
+  </data>
+  <data name="InvalidFolderOwnerToDelete" xml:space="preserve">
+    <value>INFO: Sie sind nicht der Besitzer von diesem Ordner den Sie gerade löschen wollen!</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Ungültige Anmeldeinformationen</value>
+  </data>
+  <data name="ItemExists" xml:space="preserve">
+    <value>Eintrag bereits vorhanden</value>
+  </data>
+  <data name="ListName" xml:space="preserve">
+    <value>Listenname</value>
+  </data>
+  <data name="LocationRights" xml:space="preserve">
+    <value>Sie besitzen keine Rechte für den ausgewählten Standort '#1'</value>
+  </data>
+  <data name="LookUpList" xml:space="preserve">
+    <value>Nachschlageliste</value>
+  </data>
+  <data name="LookUpListExists" xml:space="preserve">
+    <value>Die Nachschlageliste '#1' existiert bereits!</value>
+  </data>
+  <data name="LookUpListInUse" xml:space="preserve">
+    <value>Die Nachschlageliste wird von anderen Tabellen verwendet und kann nicht gelöscht werden! 
+
+Sie müssen zuerst alle Verweise dieser Liste entfernen!</value>
+  </data>
+  <data name="LookUpListSaved" xml:space="preserve">
+    <value>Die Nachschlageliste '#1'' wurde erfolgreich gespeichert!</value>
+  </data>
+  <data name="MsgButtonTextCancel" xml:space="preserve">
+    <value>&amp;Abbrechen</value>
+  </data>
+  <data name="MsgButtonTextCopy" xml:space="preserve">
+    <value>&amp;Kopieren</value>
+  </data>
+  <data name="MsgButtonTextDelete" xml:space="preserve">
+    <value>&amp;Löschen</value>
+  </data>
+  <data name="MsgButtonTextNewDoc" xml:space="preserve">
+    <value>&amp;Neuanlage</value>
+  </data>
+  <data name="MsgButtonTextNo" xml:space="preserve">
+    <value>&amp;Nein</value>
+  </data>
+  <data name="MsgButtonTextYes" xml:space="preserve">
+    <value>&amp;Ja</value>
+  </data>
+  <data name="MsgDeleteRecord" xml:space="preserve">
+    <value>Wollen Sie den Datensatz wirklich löschen?</value>
+  </data>
+  <data name="MsgDeleteWithoutSubElements" xml:space="preserve">
+    <value>Löschen &amp;ohne Unterelemente</value>
+  </data>
+  <data name="MsgDeleteWithSubElements" xml:space="preserve">
+    <value>Löschen &amp;mit Unterelemente</value>
+  </data>
+  <data name="MsgNonSuccUndo" xml:space="preserve">
+    <value>Datensatz konnter nicht wiederhergestellt werden!</value>
+  </data>
+  <data name="MsgRefreshData" xml:space="preserve">
+    <value>Datensatz aktualisieren</value>
+  </data>
+  <data name="MsgSuccUndo" xml:space="preserve">
+    <value>Datensatz wurde erfolgreich wiederhergestellt!</value>
+  </data>
+  <data name="MsgTitleConfirmDelete" xml:space="preserve">
+    <value>Löschen bestätigen</value>
+  </data>
+  <data name="NameExists" xml:space="preserve">
+    <value>Name ist bereits vorhanden!</value>
+  </data>
+  <data name="NewFolder" xml:space="preserve">
+    <value>Neuer Order</value>
+  </data>
+  <data name="NewGroup" xml:space="preserve">
+    <value>Neue Gruppe</value>
+  </data>
+  <data name="NewMask" xml:space="preserve">
+    <value>Tragen Sie den Name der neuen Suchmaske ein!</value>
+  </data>
+  <data name="NewStatus" xml:space="preserve">
+    <value>Neuer Status</value>
+  </data>
+  <data name="NewStatusPrompt" xml:space="preserve">
+    <value>Tragen Sie den Namen des neuen Statuses im Eingabefeld ein!</value>
+  </data>
+  <data name="NodeItemHasChildrenByCopy" xml:space="preserve">
+    <value>Ein Element kann nicht in eine ihr selbst untegeordnete Gruppe verschoben werden!</value>
+  </data>
+  <data name="NonFieldSelect" xml:space="preserve">
+    <value>Bitte selektieren Sie ein Feld in der linken Spalte!</value>
+  </data>
+  <data name="NonSite" xml:space="preserve">
+    <value>Bitte wählen Sie einen Standort aus!</value>
+  </data>
+  <data name="NotConfirmPassword" xml:space="preserve">
+    <value>Passwort konnte nicht bestätigt werden!</value>
+  </data>
+  <data name="OutlookDateBeyondNextMonth" xml:space="preserve">
+    <value>Drüber hinaus</value>
+  </data>
+  <data name="OutlookDateEarlierThisMonth" xml:space="preserve">
+    <value>Vor einem Monat</value>
+  </data>
+  <data name="OutlookDateEmpty" xml:space="preserve">
+    <value>Leer</value>
+  </data>
+  <data name="OutlookDateLastMonth" xml:space="preserve">
+    <value>Letzten Monat</value>
+  </data>
+  <data name="OutlookDateLastWeek" xml:space="preserve">
+    <value>Letzte Woche</value>
+  </data>
+  <data name="OutlookDateLaterThisMonth" xml:space="preserve">
+    <value>Älter als diesen Monat</value>
+  </data>
+  <data name="OutlookDateNextMonth" xml:space="preserve">
+    <value>Nächster Monat</value>
+  </data>
+  <data name="OutlookDateNextWeek" xml:space="preserve">
+    <value>Nächste Woche</value>
+  </data>
+  <data name="OutlookDateOlder" xml:space="preserve">
+    <value>Älter</value>
+  </data>
+  <data name="OutlookDateThreeWeeksAgo" xml:space="preserve">
+    <value>Vorvorletzte Woche</value>
+  </data>
+  <data name="OutlookDateThreeWeeksAway" xml:space="preserve">
+    <value>In drei Wochen</value>
+  </data>
+  <data name="OutlookDateToday" xml:space="preserve">
+    <value>Heute</value>
+  </data>
+  <data name="OutlookDateTomorrow" xml:space="preserve">
+    <value>Morgen</value>
+  </data>
+  <data name="OutlookDateTwoWeeksAgo" xml:space="preserve">
+    <value>Vor zwei Wochen</value>
+  </data>
+  <data name="OutlookDateTwoWeeksAway" xml:space="preserve">
+    <value>In zwei Wochen</value>
+  </data>
+  <data name="OutlookDateYesterday" xml:space="preserve">
+    <value>Gestern</value>
+  </data>
+  <data name="OverWriteFile" xml:space="preserve">
+    <value>Die Datei '#1' ist bereits vorhanden!</value>
+  </data>
+  <data name="PasswordExists" xml:space="preserve">
+    <value>Passwort ist bereits vorhanden!</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Lesen</value>
+  </data>
+  <data name="ReadExecuting" xml:space="preserve">
+    <value>Lesen / Ausführen / Löschen</value>
+  </data>
+  <data name="RecordNavigatorError" xml:space="preserve">
+    <value>Zum angegebenen Datensatz konnte nicht gewechselt werden!</value>
+  </data>
+  <data name="RecordNavigatorString" xml:space="preserve">
+    <value>Datensatz:|von</value>
+  </data>
+  <data name="RenameFolder" xml:space="preserve">
+    <value>Ordner umbenennen.</value>
+  </data>
+  <data name="RenameGroup" xml:space="preserve">
+    <value>Gruppe umbenennen</value>
+  </data>
+  <data name="SearchMasks" xml:space="preserve">
+    <value>Filtermasken</value>
+  </data>
+  <data name="StateChange" xml:space="preserve">
+    <value>Dokumentenstatus ändern</value>
+  </data>
+  <data name="TableExists" xml:space="preserve">
+    <value>Tabelle ist bereits vorhanden!</value>
+  </data>
+  <data name="TableName" xml:space="preserve">
+    <value>Tabellenname</value>
+  </data>
+  <data name="TableNameExists" xml:space="preserve">
+    <value>Der Tabellenname '#1' existiert bereits!</value>
+  </data>
+  <data name="ToDay" xml:space="preserve">
+    <value>Heute</value>
+  </data>
+  <data name="UM" xml:space="preserve">
+    <value>Benutzerverwaltung</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="ValueExists" xml:space="preserve">
+    <value>Der Wert '#1' wird bereits verwendet!
+
+Wollen Sie den Eintrag trotzdem löschen?</value>
+  </data>
+  <data name="ValueIsMissing" xml:space="preserve">
+    <value>Im Feld '#1' fehlt Ihre Eingabe!</value>
+  </data>
+  <data name="ValueIsNotUnique" xml:space="preserve">
+    <value>Der Wert '#1' existiert bereits!
+Die Einträge in einer Werteliste müssen eindeutig sein!</value>
+  </data>
+  <data name="ValueList" xml:space="preserve">
+    <value>Werteliste</value>
+  </data>
+  <data name="ValueListInUse" xml:space="preserve">
+    <value>Die Werteliste '#1' wird bereits in anderen Tabellen verwendet!</value>
+  </data>
+  <data name="ViewFolderContens" xml:space="preserve">
+    <value>Ordnerinhalt anzeigen</value>
+  </data>
+  <data name="Write" xml:space="preserve">
+    <value>Schreiben</value>
+  </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Unerwarteter Fehler</value>
+  </data>
+  <data name="CriticalError" xml:space="preserve">
+    <value>Schwerer Fehler! Anwendung wird beendet!</value>
+  </data>
+  <data name="DeleteRecord" xml:space="preserve">
+    <value>Wollen Sie den Datensatz wirklich löschen?</value>
+  </data>
+  <data name="Tesdt" xml:space="preserve">
+    <value>Tesdt</value>
+  </data>
+</root>

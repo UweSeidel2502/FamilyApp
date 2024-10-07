@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FamilyAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ArbeitsStunden">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Datum" Type="smalldatetime" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Stunden" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Taetigkeit" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bearbeiter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DM_DisplayIcons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileExtension" Type="varchar" MaxLength="10" />
+          <Property Name="DisplayIcon" Type="image" />
+        </EntityType>
+        <EntityType Name="DM_DocumenState">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FontStrikeThru" Type="bit" Nullable="false" />
+          <Property Name="ForeColor" Type="int" />
+          <Property Name="EndText" Type="varchar" MaxLength="255" />
+          <Property Name="UsesBackColor" Type="bit" Nullable="false" />
+          <Property Name="BackColor" Type="int" />
+          <Property Name="FLAG" Type="int" />
+          <Property Name="BeginText" Type="varchar" MaxLength="255" />
+          <Property Name="FontItalic" Type="bit" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="2000" />
+          <Property Name="FontUnderline" Type="bit" Nullable="false" />
+          <Property Name="FontName" Type="varchar" MaxLength="255" />
+          <Property Name="FontBold" Type="bit" Nullable="false" />
+          <Property Name="StatusName" Type="varchar" MaxLength="255" />
+          <Property Name="FontSize" Type="int" />
+          <Property Name="UsesDateEnd" Type="int" />
+          <Property Name="UsesDateBegin" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_Documents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FolderID" Type="int" />
+          <Property Name="Document" Type="varbinary(max)" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="10" />
+          <Property Name="Description" Type="varchar" MaxLength="254" />
+          <Property Name="FLAG" Type="int" />
+          <Property Name="DocumentState" Type="int" />
+          <Property Name="ICON" Type="varbinary(max)" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateChanged" Type="datetime" />
+          <Property Name="FileSize" Type="bigint" />
+        </EntityType>
+        <EntityType Name="DM_Folders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="FLAG" Type="int" />
+          <Property Name="FolderName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FamilyToolsTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Typ" Type="int" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PasswordTreeID" Type="int" />
+          <Property Name="FactoryName" Type="nvarchar" MaxLength="250" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="250" />
+          <Property Name="Homepage" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PasswordTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="NodeName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sys_Reg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REG_SETTINGS" Type="varchar" MaxLength="1000" />
+          <Property Name="REG_TYPE" Type="int" />
+          <Property Name="REG_ROOT" Type="varchar" MaxLength="255" />
+          <Property Name="REG_KEY" Type="varchar" MaxLength="255" />
+          <Property Name="REG_SECTION" Type="varchar" MaxLength="255" />
+          <Property Name="REG_BLOB" Type="image" />
+          <Property Name="ModificationUser" Type="varchar" MaxLength="100" />
+          <Property Name="ModificationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FamilyToolsTreeID" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="PurchaseDate" Type="date" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Waranty" Type="bit" />
+          <Property Name="Picture" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_ArbeitsStunden_Bearbeiter">
+          <End Role="Bearbeiter" Type="Self.Bearbeiter" Multiplicity="1" />
+          <End Role="ArbeitsStunden" Type="Self.ArbeitsStunden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bearbeiter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ArbeitsStunden">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DM_Documents_DM_Folders">
+          <End Role="DM_Folders" Type="Self.DM_Folders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DM_Documents" Type="Self.DM_Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_Folders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DM_Documents">
+              <PropertyRef Name="FolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Password_PasswordTree">
+          <End Role="PasswordTree" Type="Self.PasswordTree" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Password" Type="Self.Password" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PasswordTree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Password">
+              <PropertyRef Name="PasswordTreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tools_FamilyToolsTree">
+          <End Role="FamilyToolsTree" Type="Self.FamilyToolsTree" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tools" Type="Self.Tools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FamilyToolsTree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tools">
+              <PropertyRef Name="FamilyToolsTreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamilyAppModelStoreContainer">
+          <EntitySet Name="ArbeitsStunden" EntityType="Self.ArbeitsStunden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bearbeiter" EntityType="Self.Bearbeiter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DisplayIcons" EntityType="Self.DM_DisplayIcons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DocumenState" EntityType="Self.DM_DocumenState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_Documents" EntityType="Self.DM_Documents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_Folders" EntityType="Self.DM_Folders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FamilyToolsTree" EntityType="Self.FamilyToolsTree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Password" EntityType="Self.Password" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PasswordTree" EntityType="Self.PasswordTree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sys_Reg" EntityType="Self.sys_Reg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tools" EntityType="Self.Tools" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ArbeitsStunden_Bearbeiter" Association="Self.FK_ArbeitsStunden_Bearbeiter">
+            <End Role="Bearbeiter" EntitySet="Bearbeiter" />
+            <End Role="ArbeitsStunden" EntitySet="ArbeitsStunden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DM_Documents_DM_Folders" Association="Self.FK_DM_Documents_DM_Folders">
+            <End Role="DM_Folders" EntitySet="DM_Folders" />
+            <End Role="DM_Documents" EntitySet="DM_Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Password_PasswordTree" Association="Self.FK_Password_PasswordTree">
+            <End Role="PasswordTree" EntitySet="PasswordTree" />
+            <End Role="Password" EntitySet="Password" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tools_FamilyToolsTree" Association="Self.FK_Tools_FamilyToolsTree">
+            <End Role="FamilyToolsTree" EntitySet="FamilyToolsTree" />
+            <End Role="Tools" EntitySet="Tools" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FamilyAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ArbeitsStunden">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Stunden" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Taetigkeit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bearbeiter" Relationship="Self.FK_ArbeitsStunden_Bearbeiter" FromRole="ArbeitsStunden" ToRole="Bearbeiter" />
+        </EntityType>
+        <EntityType Name="Bearbeiter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ArbeitsStunden" Relationship="Self.FK_ArbeitsStunden_Bearbeiter" FromRole="Bearbeiter" ToRole="ArbeitsStunden" />
+        </EntityType>
+        <EntityType Name="DM_DisplayIcons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DisplayIcon" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DM_DocumenState">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FontStrikeThru" Type="Boolean" Nullable="false" />
+          <Property Name="ForeColor" Type="Int32" />
+          <Property Name="EndText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UsesBackColor" Type="Boolean" Nullable="false" />
+          <Property Name="BackColor" Type="Int32" />
+          <Property Name="FLAG" Type="Int32" />
+          <Property Name="BeginText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FontItalic" Type="Boolean" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="FontUnderline" Type="Boolean" Nullable="false" />
+          <Property Name="FontName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FontBold" Type="Boolean" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FontSize" Type="Int32" />
+          <Property Name="UsesDateEnd" Type="Int32" />
+          <Property Name="UsesDateBegin" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_Documents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FolderID" Type="Int32" />
+          <Property Name="Document" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DocumentType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="FLAG" Type="Int32" />
+          <Property Name="DocumentState" Type="Int32" />
+          <Property Name="ICON" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateChanged" Type="DateTime" Precision="3" />
+          <Property Name="FileSize" Type="Int64" />
+          <NavigationProperty Name="DM_Folders" Relationship="Self.FK_DM_Documents_DM_Folders" FromRole="DM_Documents" ToRole="DM_Folders" />
+        </EntityType>
+        <EntityType Name="DM_Folders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="FLAG" Type="Int32" />
+          <Property Name="FolderName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DM_Documents" Relationship="Self.FK_DM_Documents_DM_Folders" FromRole="DM_Folders" ToRole="DM_Documents" />
+        </EntityType>
+        <EntityType Name="FamilyToolsTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Typ" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tools" Relationship="Self.FK_Tools_FamilyToolsTree" FromRole="FamilyToolsTree" ToRole="Tools" />
+        </EntityType>
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PasswordTreeID" Type="Int32" />
+          <Property Name="FactoryName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Homepage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PasswordTree" Relationship="Self.FK_Password_PasswordTree" FromRole="Password" ToRole="PasswordTree" />
+        </EntityType>
+        <EntityType Name="PasswordTree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="NodeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Password" Relationship="Self.FK_Password_PasswordTree" FromRole="PasswordTree" ToRole="Password" />
+        </EntityType>
+        <EntityType Name="sys_Reg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REG_SETTINGS" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="REG_TYPE" Type="Int32" />
+          <Property Name="REG_ROOT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="REG_KEY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="REG_SECTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="REG_BLOB" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ModificationUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ModificationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FamilyToolsTreeID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseDate" Type="DateTime" Precision="0" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Waranty" Type="Boolean" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="FamilyToolsTree" Relationship="Self.FK_Tools_FamilyToolsTree" FromRole="Tools" ToRole="FamilyToolsTree" />
+        </EntityType>
+        <Association Name="FK_ArbeitsStunden_Bearbeiter">
+          <End Role="Bearbeiter" Type="Self.Bearbeiter" Multiplicity="1" />
+          <End Role="ArbeitsStunden" Type="Self.ArbeitsStunden" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bearbeiter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ArbeitsStunden">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DM_Documents_DM_Folders">
+          <End Role="DM_Folders" Type="Self.DM_Folders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="DM_Documents" Type="Self.DM_Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_Folders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DM_Documents">
+              <PropertyRef Name="FolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tools_FamilyToolsTree">
+          <End Role="FamilyToolsTree" Type="Self.FamilyToolsTree" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tools" Type="Self.Tools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FamilyToolsTree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tools">
+              <PropertyRef Name="FamilyToolsTreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Password_PasswordTree">
+          <End Role="PasswordTree" Type="Self.PasswordTree" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Password" Type="Self.Password" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PasswordTree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Password">
+              <PropertyRef Name="PasswordTreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FamilyAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ArbeitsStunden" EntityType="Self.ArbeitsStunden" />
+          <EntitySet Name="Bearbeiter" EntityType="Self.Bearbeiter" />
+          <EntitySet Name="DM_DisplayIcons" EntityType="Self.DM_DisplayIcons" />
+          <EntitySet Name="DM_DocumenState" EntityType="Self.DM_DocumenState" />
+          <EntitySet Name="DM_Documents" EntityType="Self.DM_Documents" />
+          <EntitySet Name="DM_Folders" EntityType="Self.DM_Folders" />
+          <EntitySet Name="FamilyToolsTree" EntityType="Self.FamilyToolsTree" />
+          <EntitySet Name="Password" EntityType="Self.Password" />
+          <EntitySet Name="PasswordTree" EntityType="Self.PasswordTree" />
+          <EntitySet Name="sys_Reg" EntityType="Self.sys_Reg" />
+          <EntitySet Name="Tools" EntityType="Self.Tools" />
+          <AssociationSet Name="FK_ArbeitsStunden_Bearbeiter" Association="Self.FK_ArbeitsStunden_Bearbeiter">
+            <End Role="Bearbeiter" EntitySet="Bearbeiter" />
+            <End Role="ArbeitsStunden" EntitySet="ArbeitsStunden" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DM_Documents_DM_Folders" Association="Self.FK_DM_Documents_DM_Folders">
+            <End Role="DM_Folders" EntitySet="DM_Folders" />
+            <End Role="DM_Documents" EntitySet="DM_Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tools_FamilyToolsTree" Association="Self.FK_Tools_FamilyToolsTree">
+            <End Role="FamilyToolsTree" EntitySet="FamilyToolsTree" />
+            <End Role="Tools" EntitySet="Tools" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Password_PasswordTree" Association="Self.FK_Password_PasswordTree">
+            <End Role="PasswordTree" EntitySet="PasswordTree" />
+            <End Role="Password" EntitySet="Password" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FamilyAppModelStoreContainer" CdmEntityContainer="FamilyAppEntities">
+          <EntitySetMapping Name="ArbeitsStunden">
+            <EntityTypeMapping TypeName="FamilyAppModel.ArbeitsStunden">
+              <MappingFragment StoreEntitySet="ArbeitsStunden">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Stunden" ColumnName="Stunden" />
+                <ScalarProperty Name="Taetigkeit" ColumnName="Taetigkeit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bearbeiter">
+            <EntityTypeMapping TypeName="FamilyAppModel.Bearbeiter">
+              <MappingFragment StoreEntitySet="Bearbeiter">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DisplayIcons">
+            <EntityTypeMapping TypeName="FamilyAppModel.DM_DisplayIcons">
+              <MappingFragment StoreEntitySet="DM_DisplayIcons">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="DisplayIcon" ColumnName="DisplayIcon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DocumenState">
+            <EntityTypeMapping TypeName="FamilyAppModel.DM_DocumenState">
+              <MappingFragment StoreEntitySet="DM_DocumenState">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FontStrikeThru" ColumnName="FontStrikeThru" />
+                <ScalarProperty Name="ForeColor" ColumnName="ForeColor" />
+                <ScalarProperty Name="EndText" ColumnName="EndText" />
+                <ScalarProperty Name="UsesBackColor" ColumnName="UsesBackColor" />
+                <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="BeginText" ColumnName="BeginText" />
+                <ScalarProperty Name="FontItalic" ColumnName="FontItalic" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FontUnderline" ColumnName="FontUnderline" />
+                <ScalarProperty Name="FontName" ColumnName="FontName" />
+                <ScalarProperty Name="FontBold" ColumnName="FontBold" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="UsesDateEnd" ColumnName="UsesDateEnd" />
+                <ScalarProperty Name="UsesDateBegin" ColumnName="UsesDateBegin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_Documents">
+            <EntityTypeMapping TypeName="FamilyAppModel.DM_Documents">
+              <MappingFragment StoreEntitySet="DM_Documents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FolderID" ColumnName="FolderID" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="DocumentState" ColumnName="DocumentState" />
+                <ScalarProperty Name="ICON" ColumnName="ICON" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_Folders">
+            <EntityTypeMapping TypeName="FamilyAppModel.DM_Folders">
+              <MappingFragment StoreEntitySet="DM_Folders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+                <ScalarProperty Name="FolderName" ColumnName="FolderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FamilyToolsTree">
+            <EntityTypeMapping TypeName="FamilyAppModel.FamilyToolsTree">
+              <MappingFragment StoreEntitySet="FamilyToolsTree">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Password">
+            <EntityTypeMapping TypeName="FamilyAppModel.Password">
+              <MappingFragment StoreEntitySet="Password">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PasswordTreeID" ColumnName="PasswordTreeID" />
+                <ScalarProperty Name="FactoryName" ColumnName="FactoryName" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="Homepage" ColumnName="Homepage" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PasswordTree">
+            <EntityTypeMapping TypeName="FamilyAppModel.PasswordTree">
+              <MappingFragment StoreEntitySet="PasswordTree">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="NodeName" ColumnName="NodeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_Reg">
+            <EntityTypeMapping TypeName="FamilyAppModel.sys_Reg">
+              <MappingFragment StoreEntitySet="sys_Reg">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="REG_SETTINGS" ColumnName="REG_SETTINGS" />
+                <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
+                <ScalarProperty Name="REG_ROOT" ColumnName="REG_ROOT" />
+                <ScalarProperty Name="REG_KEY" ColumnName="REG_KEY" />
+                <ScalarProperty Name="REG_SECTION" ColumnName="REG_SECTION" />
+                <ScalarProperty Name="REG_BLOB" ColumnName="REG_BLOB" />
+                <ScalarProperty Name="ModificationUser" ColumnName="ModificationUser" />
+                <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tools">
+            <EntityTypeMapping TypeName="FamilyAppModel.Tools">
+              <MappingFragment StoreEntitySet="Tools">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FamilyToolsTreeID" ColumnName="FamilyToolsTreeID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Waranty" ColumnName="Waranty" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
