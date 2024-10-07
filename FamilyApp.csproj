@@ -151,6 +151,12 @@
     <Compile Include="UI\Documents\frmNewDocument.Designer.cs">
       <DependentUpon>frmNewDocument.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Handy\frmHandy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Handy\frmHandy.Designer.cs">
+      <DependentUpon>frmHandy.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Passwörter\frmPasswordData.cs">
       <SubType>Form</SubType>
     </Compile>
