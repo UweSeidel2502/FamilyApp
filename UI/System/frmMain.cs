@@ -7,6 +7,7 @@ using FamilyApp.UI.Tools;
 using FamilyApp.UI.Documents;
 using FamilyApp.UI.Password;
 using FamilyApp.UI.StundenHG8;
+using FamilyApp.UI.Handy;
 using FamilyApp.Classes;
 
 namespace FamilyApp
@@ -97,15 +98,15 @@ namespace FamilyApp
         }
         private void btnHandy_Click(object sender, Janus.Windows.Ribbon.CommandEventArgs e)
         {
-            frmPasswordData f;
-            if (!Program.HasFormInstance("frmPasswordData", true))
+            if (!Program.HasFormInstance("frmHandy", true))
             {
-                f = new frmPasswordData();
+                var f = new frmHandy();
                 f.MdiParent = this;
                 f.Text = btnHandy.Text;
                 SetFormIcon((Bitmap)btnHandy.Image, f, img16);
                 f.Show();
             }
+           
         }
         public void SetFormIcon(System.Drawing.Bitmap bm, Form AForm, ImageList AImageList)
         {
